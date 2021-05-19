@@ -43,6 +43,11 @@ class Connection extends EventEmitter {
       }
       self.emit('connect')
     })
+    this.stream.setTimeout(2000);
+    this.stream.on('timeout', () => {
+      this.stream.end();
+      this.emit('end');
+    });
 
     const reportStreamError = function (error) {
       // errors about disconnections should be ignored during disconnect
