@@ -1,8 +1,11 @@
 {
-  "name": "node-postgres",
+  "name": "@safetyculture/node-postgres",
   "description": "node postgres monorepo",
   "main": "index.js",
-  "repository": "git@github.com:brianc/node-postgres.git",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh@github.com:SafetyCulture/node-postgres.git"
+  },
   "author": "Brian M. Carlson <brian.m.carlson@gmail.com>",
   "license": "MIT",
   "workspaces": [
@@ -33,5 +36,10 @@
     "arrowParens": "always",
     "trailingComma": "es5",
     "singleQuote": true
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/SafetyCulture/node-postgres/issues"
+  },
+  "homepage": "https://github.com/brianc/node-postgres#readme",
+  "version": "1.0.0"
 }
