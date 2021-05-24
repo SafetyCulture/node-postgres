@@ -43,7 +43,15 @@ class Connection extends EventEmitter {
       }
       self.emit('connect')
     })
-    this.stream.setTimeout(2000);
+
+    /**
+     * Set socket timeout to 30s,
+     * Any slow queries are seen as inactivity socket
+     * Will get killed after 30s
+     * Similar to statement_timeout, but this is one the client side
+     * 
+     */
+    this.stream.setTimeout(30000);
     this.stream.on('timeout', () => {
       this.stream.end();
       this.emit('end');
